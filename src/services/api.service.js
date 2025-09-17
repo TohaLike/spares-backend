@@ -7,7 +7,6 @@ class ApiService {
   apiUrl;
   password;
   login;
-  accessToken;
 
   constructor() {
     this.apiUrl = process.env.API_URL;
@@ -27,8 +26,6 @@ class ApiService {
       },
     });
 
-    this.accessToken = response.data.result.accessToken;
-
     return response.data;
   }
 
@@ -43,7 +40,9 @@ class ApiService {
       }
     );
 
-    return { details: response.data.result };
+    const result = response.data.result;
+
+    return result;
   }
 }
 

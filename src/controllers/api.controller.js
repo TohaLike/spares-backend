@@ -23,7 +23,7 @@ class ApiController {
 
       const details = await apiService.getDetails(code, refreshToken);
 
-      return res.json({ details });
+      return res.json(details);
     } catch (e) {
       next(e);
     }
